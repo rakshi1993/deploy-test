@@ -1,11 +1,10 @@
-#from ninx
 FROM nginx:latest
 
-# Remove the default NGINX content
+# Remove default NGINX content
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy your frontend files to the NGINX web root
-COPY . /usr/share/nginx/html/
+# Copy the contents of the deploy-test folder into the NGINX web root
+COPY deploy-test/ /usr/share/nginx/html/
 
-# Ensure NGINX runs in the foreground
+# Start NGINX
 CMD ["nginx", "-g", "daemon off;"]
