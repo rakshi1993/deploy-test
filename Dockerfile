@@ -1,3 +1,4 @@
+#from ninx
 FROM nginx:latest
 
 # Remove the default NGINX content
